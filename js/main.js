@@ -20,7 +20,8 @@ const { createApp } = Vue
             this.todoList.splice(posizione, 1);
         },
         addElement() {
-
+            if (this.newElement.text.length >= 5) {
+                
                 let newElement = {
                     azione: this.newElement.text,
                     stato: false
@@ -28,6 +29,7 @@ const { createApp } = Vue
                 
                 this.todoList.unshift(newElement);
                 this.newElement.text = "";
-        }
+            }
+        },
     }
   }).mount("#app");

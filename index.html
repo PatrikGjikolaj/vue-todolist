@@ -22,13 +22,13 @@
                         <li v-for="(todo, c) in todoList">
                             <div v-if="todoList[c].stato == true">
                                 <div class="my-3">
-                                    <span class="text-decoration-line-through">{{todo}}</span>
+                                    <span class="text-decoration-line-through">{{todo.azione}}</span>
                                     <button type="button" class="btn btn-success mx-3" @click="removeTodo(c)">X</button>
                                 </div>
                             </div>
                             <div v-else>
                                 <div class="my-3">
-                                    <span>{{todo}}</span>
+                                    <span>{{todo.azione}}</span>
                                     <button type="button" class="btn btn-danger mx-3" @click="removeTodo(c)">X</button>
                                 </div>
                             </div>
