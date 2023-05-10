@@ -8,12 +8,26 @@ const { createApp } = Vue
                 {azione: "Scaldare l'acqua", stato: true },
                 {azione: "Mettere il sale", stato: false },
                 {azione: "Mettere la pasta", stato: true},
-            ]
+            ],
+            newElement: {
+                azione: "",
+                stato: false
+            }
         }
     },
     methods: {
         removeTodo(posizione) {
             this.todoList.splice(posizione, 1);
+        },
+        addElement() {
+
+                let newElement = {
+                    azione: this.newElement.text,
+                    stato: false
+                };
+                
+                this.todoList.unshift(newElement);
+                this.newElement.text = "";
         }
     }
   }).mount("#app");

@@ -14,15 +14,23 @@
             <div class="row my-3">
                 <div class="col">
                     <h1 class="my-3">TodoList</h1>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1" @click="addElement">Aggiungi</button>
+                        <input type="text" class="form-control" placeholder="Inserisci qui il todoElement"  aria-describedby="button-addon1" v-model="newElement.text">
+                      </div>
                     <ul>
                         <li v-for="(todo, c) in todoList">
-                            <div v-if="todoList[c].stato == true" class="my-3">
-                                <span class="text-decoration-line-through">{{todo}}</span>
-                                <button type="button" class="btn btn-success mx-3" @click="removeTodo(c)">X</button>
+                            <div v-if="todoList[c].stato == true">
+                                <div class="my-3">
+                                    <span class="text-decoration-line-through">{{todo}}</span>
+                                    <button type="button" class="btn btn-success mx-3" @click="removeTodo(c)">X</button>
+                                </div>
                             </div>
                             <div v-else>
-                                {{todo}}
-                                <button type="button" class="btn btn-danger mx-3" @click="removeTodo(c)">X</button>
+                                <div class="my-3">
+                                    <span>{{todo}}</span>
+                                    <button type="button" class="btn btn-danger mx-3" @click="removeTodo(c)">X</button>
+                                </div>
                             </div>
                         </li>
                     </ul>
