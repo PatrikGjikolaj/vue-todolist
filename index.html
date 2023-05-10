@@ -9,7 +9,12 @@
 </head>
 <body>
     <div id="app">
-
+        <ul>
+            <li v-for="(todo, c) in todoList">
+                {{todo}}
+                <button @click="removeTodo(c)">X</button>
+            </li>
+        </ul>
     </div>
     <script src="./js/main.js"></script>
 </body>
